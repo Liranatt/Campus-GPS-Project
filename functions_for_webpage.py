@@ -4,7 +4,7 @@ from get_photo_coordinates_to_tensors import get_gps_from_image, numpy_to_tensor
 import numpy as np
 
 def map_distance_visualizer(gps1, gps2):
-    m = folium.Map(location=[gps1[0], gps1[1]], titles='OpenStreetMap')
+    m = folium.Map(location=[gps1[0], gps1[1]], tiles='OpenStreetMap')
 
     folium.Marker(
         location=[gps1[0], gps1[1]],
@@ -27,7 +27,7 @@ def map_distance_visualizer(gps1, gps2):
         opacity=0.8
     ).add_to(m)
 
-    m.fit_bounds([gps1[0], gps1[1]], [gps2[0], gps2[1]], padding=(50,50))
+    m.fit_bounds([ [gps1[0], gps1[1]], [gps2[0], gps2[1]] ], padding=(50,50))
     return m._repr_html_()
 
 # Model prediction function
