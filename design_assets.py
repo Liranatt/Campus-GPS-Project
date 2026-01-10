@@ -35,10 +35,13 @@ def get_css():
 
     /* --- TYPOGRAPHY --- */
     .hero-container {
-        text-align: left;
+        text-align: center;
         padding: 40px 0 20px 0;
         border-bottom: 1px solid rgba(255,255,255,0.05);
         margin-bottom: 30px;
+        display: flex;           
+        flex-direction: column;
+        align-items: center;
     }
     .hero-title {
         font-family: 'Inter', sans-serif;
@@ -54,8 +57,9 @@ def get_css():
         font-size: 1.25rem;
         color: #94a3b8;
         font-weight: 300;
-        max-width: 600px;
-        margin-top: 10px;
+        max-width: 800px;       
+        margin-top: 15px;
+        line-height: 1.6;
     }
 
     /* --- GLASS CARDS (STATS) --- */
@@ -117,10 +121,10 @@ def get_css():
 def get_header_html():
     return """
     <div class="hero-container">
-        <div class="hero-title">Orbital Vision</div>
+        <div class="hero-title">GeoSpatial Core</div>
         <div class="hero-subtitle">
-            Next-generation geospatial regression engine powered by EfficientNet-B7. 
-            Pinpointing locations from ground-level imagery with sub-15m accuracy.
+            Autonomous location inference powered by EfficientNet-B7. 
+            Delivering high-precision coordinate regression from ground-level visual data.
         </div>
     </div>
     """
