@@ -57,27 +57,37 @@ def get_css():
         line-height: 1.6;
     }
 
-    /* --- STATS & UI --- */
+    /* --- GLASS CARDS (STATS) --- */
     .stat-card {
         background: rgba(255, 255, 255, 0.03) !important;
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.08) !important;
         border-radius: 16px !important;
+        padding-bottom: 10px !important; /* Added padding to prevent cutoff */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .stat-card textarea {
         background: transparent !important;
         border: none !important;
         color: #e2e8f0 !important;
-        font-size: 1.4rem !important;
+        font-size: 1.6rem !important; /* Made slightly bigger for impact */
         font-weight: 700 !important;
         box-shadow: none !important;
+        height: auto !important;      /* Allow height to grow */
+        line-height: 1.4 !important;  /* Fix clipping */
+        overflow: hidden !important;
+        margin-top: 5px !important;
     }
     .stat-card label span {
-        color: #64748b !important;
+        color: #94a3b8 !important;    /* Lighter grey for better contrast */
         text-transform: uppercase;
         font-size: 0.75rem !important;
         letter-spacing: 1.5px;
         font-weight: 600;
+        margin-bottom: 5px;
+        display: block;
     }
     .map-container {
         border-radius: 20px;
