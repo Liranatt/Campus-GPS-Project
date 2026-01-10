@@ -1,13 +1,32 @@
 ---
-title: GPU Modell Liran And Tom
-emoji: 🚀
-colorFrom: green
+title: Campus Image-to-GPS Regression
+emoji: 🛰️
+colorFrom: indigo
 colorTo: gray
 sdk: gradio
 sdk_version: 6.2.0
 app_file: app.py
 pinned: false
-short_description: This is a demo webpageish that demonstraits our model
+license: mit
+short_description: Autonomous geolocation utilizing EfficientNet-B7 to regress GPS coordinates from ground-level imagery.
 ---
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+# 🌍 Campus Image-to-GPS Regression
+
+### Project Overview
+This project implements a **Deep Learning-based Visual Localization System** designed to predict precise GPS coordinates (Latitude, Longitude) from a single ground-level image. Unlike traditional retrieval-based methods, this system utilizes a **Regression-based approach** powered by an **EfficientNet-B7** backbone, allowing for continuous coordinate prediction rather than discrete classification.
+
+The model was trained on a custom dataset collected within the **Ben-Gurion University** campus, demonstrating the feasibility of autonomous navigation and localization in GPS-denied environments using purely visual data.
+
+### 🚀 Key Technologies
+* **Architecture:** EfficientNet-B7 (Pre-trained on ImageNet, Fine-tuned for Regression)
+* **Framework:** PyTorch
+* **Interface:** Gradio (Custom CSS/HTML Design)
+* **Visualization:** Folium & Leaflet.js for interactive mapping
+* **Data Processing:** Pillow-HEIF for raw mobile sensor data
+
+### 📊 Performance Metrics
+The system evaluates performance using the **Haversine Formula** to calculate the Great Circle distance between the predicted coordinates and the ground truth EXIF metadata. 
+
+### 👥 Authors
+Developed by **Liran Attar** and **Tom Mimran** as part of the Computer Science Department research track.
