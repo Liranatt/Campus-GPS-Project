@@ -54,20 +54,29 @@ def get_css():
         line-height: 1.6;
     }
 
-    /* --- THE LAYOUT MAGIC (Flexbox Linking) --- */
+    /* --- LAYOUT LINKING --- */
     .dashboard-row {
         display: flex !important;
-        align-items: stretch !important; /* This forces both columns to be equal height */
+        align-items: stretch !important;
         gap: 20px;
     }
-    /* Make the inner columns fill the height */
     .dashboard-row > div {
         display: flex;
         flex-direction: column;
         height: auto !important; 
     }
 
-    /* --- LEFT SIDE: AUTO-GROWING TEXT --- */
+    /* --- SECTION HEADERS --- */
+    .section-header h3 {
+        color: #e0e7ff !important;
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* --- STAT CARDS (No Scrollbars!) --- */
     .stat-card {
         background: rgba(255, 255, 255, 0.03) !important;
         backdrop-filter: blur(10px);
@@ -77,7 +86,6 @@ def get_css():
         display: flex;
         flex-direction: column;
         justify-content: center;
-        flex-grow: 0; /* Don't stretch the card itself unnecessarily */
     }
     .stat-card textarea {
         background: transparent !important;
@@ -87,12 +95,13 @@ def get_css():
         font-weight: 700 !important;
         box-shadow: none !important;
         
-        /* Auto-fit magic */
         height: auto !important; 
-        min-height: 60px !important; /* Minimum space */
-        white-space: pre-wrap !important; /* Wrap text naturally */
-        overflow: visible !important;
-        resize: vertical !important;
+        min-height: 60px !important; 
+        white-space: pre-wrap !important; 
+        
+        /* NO SCROLLBARS FIX */
+        overflow: hidden !important;
+        resize: none !important;
     }
     .stat-card label span {
         color: #94a3b8 !important;
@@ -104,13 +113,11 @@ def get_css():
         display: block;
     }
 
-    /* --- RIGHT SIDE: LIQUID MAP --- */
+    /* --- MAP CONTAINER (FULL FILL) --- */
     .map-container {
-        /* This is crucial: fill the available space provided by the neighbor column */
-        height: 100% !important; 
+        flex-grow: 1; /* Consume all remaining height */
+        height: 100% !important;
         width: 100% !important;
-        min-height: 600px; /* Fallback: don't get smaller than this */
-        
         display: flex;
         flex-direction: column;
         border-radius: 20px;
@@ -119,16 +126,16 @@ def get_css():
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
     
-    /* Force the inner iframe to fill the container */
-    .map-container > div, 
-    .map-container iframe {
+    /* Force the iframe to fill the container */
+    .map-container iframe,
+    .map-container > div {
         height: 100% !important;
         width: 100% !important;
-        flex-grow: 1;
-        border: none;
+        border: none !important;
+        display: block !important;
     }
 
-    /* --- BUTTONS & HEADERS --- */
+    /* --- BUTTONS --- */
     #predict-btn {
         font-weight: 700;
         letter-spacing: 0.5px;
@@ -137,12 +144,6 @@ def get_css():
     #predict-btn:hover {
         transform: scale(1.02);
         box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
-    }
-    .section-header p {
-        font-size: 1.1rem;
-        color: #cbd5e1;
-        font-weight: 600;
-        margin-bottom: 10px;
     }
     """
 
