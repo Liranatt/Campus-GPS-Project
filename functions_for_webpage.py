@@ -3,31 +3,42 @@ import math
 from get_photo_coordinates_to_tensors import get_gps_from_image, numpy_to_tensors
 import numpy as np
 
+def get_default_map():
+    """
+    Returns a dark-mode default map for the initial load.
+    """
+    # We use CartoDB dark_matter for the 'Dark Mode' aesthetic
+    m = folium.Map(location=[25, 0], zoom_start=2, tiles='CartoDB dark_matter')
+    return m._repr_html_()
+
+# --- 2. The Visualizer (Updated for Dark Mode) ---
 def map_distance_visualizer(gps1, gps2):
-    m = folium.Map(location=[gps1[0], gps1[1]], tiles='OpenStreetMap')
+    m = folium.Map(location=[gps1[0], gps1[1]], tiles='CartoDB dark_matter')
 
+    # True Location (Green Crosshair)
     folium.Marker(
-        location=[gps1[0], gps1[1]],
-        popup="True Location",
-        tooltip="Click for details",
-        icon=folium.Icon(color="blue", icon="map-marker")
+        location=[gps1[0], gps1[1]], 
+        popup="True Location", 
+        icon=folium.Icon(color="green", icon="crosshairs", prefix='fa')
     ).add_to(m)
 
+    # Predicted Location (Red Crosshair)
     folium.Marker(
-        location=[gps2[0], gps2[1]],
-        popup="Model Prediction Location",
-        tooltip="Click for details",
-        icon=folium.Icon(color="red", icon="info-sign")
+        location=[gps2[0], gps2[1]], 
+        popup="AI Prediction", 
+        icon=folium.Icon(color="red", icon="crosshairs", prefix='fa')
     ).add_to(m)
 
+    # The Line
     folium.PolyLine(
-        locations=[[gps1[0], gps1[1]], [gps2[0], gps2[1]]],
-        color="purple",
-        weight=5,
-        opacity=0.8
+        locations=[gps1, gps2], 
+        color="#a855f7", # Neon Purple to match your theme
+        weight=4, 
+        opacity=0.8, 
+        dash_array='10'
     ).add_to(m)
 
-    m.fit_bounds([ [gps1[0], gps1[1]], [gps2[0], gps2[1]] ], padding=(50,50))
+    m.fit_bounds([gps1, gps2], padding=(50,50))
     return m._repr_html_()
 
 # Model prediction function
@@ -43,7 +54,7 @@ def predict(input_img, image_size=(224, 224)):
 
 def real_Gps_Coordination(input_img):
     gps = get_gps_from_image(input_img)
-    return 31.262319, 34.802650
+    return [31.262319, 34.802650]
 
 def calculate_Distance(real_location, predicted_location):
     R = 6371.0
