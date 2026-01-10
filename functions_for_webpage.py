@@ -2,6 +2,7 @@ import folium
 import math
 from get_photo_coordinates_to_tensors import get_gps_from_image, numpy_to_tensors
 import numpy as np
+from PIL import Image
 
 def get_default_map():
     """
@@ -42,7 +43,7 @@ def map_distance_visualizer(gps1, gps2):
     return m._repr_html_()
 
 # Model prediction function
-def predict(input_img, image_size=(224, 224)):
+def predict(image_path, image_size=(224, 224)):
     final_results = [31.262520, 34.799629]
     img_resized = input_img.resize(image_size)
     img_array = np.array(img_resized.convert('RGB'))
@@ -52,8 +53,13 @@ def predict(input_img, image_size=(224, 224)):
     # final_results = coordinates_tensor[0]
     return final_results
 
-def real_Gps_Coordination(input_img):
-    gps = get_gps_from_image(input_img)
+def real_Gps_Coordination(image_path):
+    if image_path is None:
+        return 0.0, 0.0
+
+    img_ojb = Image.open(image_path)
+    gps = get_gps_from_image(img_obj)
+
     if gps is None:
         return 0.0, 0.0
         
