@@ -14,7 +14,7 @@ def run_full_pipeline(image):
     # Return formatted strings
     return map_html, f"{dist_km:.3f} km", f"{real_N:.4f}, {real_E:.4f}", f"{pred_N:.4f}, {pred_E:.4f}"
 
-with gr.Blocks(theme=design.get_theme(), css=design.get_css(), title="GeoSpatial Core") as demo:
+with gr.Blocks(theme=design.get_theme(), css=design.get_css(), title="Campus Image-to-GPS Regression for Localization and Navigation") as demo:
     
     gr.HTML(design.get_header_html())
     
@@ -22,28 +22,28 @@ with gr.Blocks(theme=design.get_theme(), css=design.get_css(), title="GeoSpatial
         # --- LEFT PANEL ---
         with gr.Column(scale=4, min_width=350):
             
-            gr.Markdown("### 📡 Visual Input", elem_classes=["section-header"])
+            gr.Markdown("Put Your Photo Here :)", elem_classes=["section-header"])
             input_img = gr.Image(
                 type="filepath", 
-                label="Sensor Feed", 
+                # label="Sensor Feed", 
                 height=320,
                 elem_classes=["image-container"]
             )
             
-            run_btn = gr.Button("RUN INFERENCE 🚀", variant="primary", elem_id="predict-btn", size="lg")
+            run_btn = gr.Button("CHECK RESULTS", variant="primary", elem_id="predict-btn", size="lg")
             
             gr.HTML("<br>") 
             
             # UPDATED TERMINOLOGY HERE
-            gr.Markdown("### 📊 Inference Metrics", elem_classes=["section-header"])
+            gr.Markdown("Model results compared to the ground truth", elem_classes=["section-header"])
             
             with gr.Group():
                 # "Spatial Offset" sounds very tech-forward
-                dist_output = gr.Textbox(label="Spatial Offset (Error)", value="0.000 km", elem_classes=["stat-card"])
+                dist_output = gr.Textbox(label="Error (using haversine function for calculation)", value="0.000 km", elem_classes=["stat-card"])
                 
                 with gr.Row():
                     real_coords = gr.Textbox(label="Ground Truth", value="--", elem_classes=["stat-card"])
-                    pred_coords = gr.Textbox(label="Model Estimate", value="--", elem_classes=["stat-card"])
+                    pred_coords = gr.Textbox(label="Model Estimation", value="--", elem_classes=["stat-card"])
 
         # --- RIGHT PANEL ---
         with gr.Column(scale=7):
