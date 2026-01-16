@@ -1,0 +1,178 @@
+================================================================================
+GPS LOCALIZATION - FINAL EXPERIMENTS SUMMARY
+================================================================================
+Generated: 2026-01-15 23:45:15
+Total Experiments: 10
+Total Model Configurations: 30
+
+================================================================================
+🏆 BEST OVERALL RESULT
+================================================================================
+Model: EfficientNet
+Experiment: 100ep Full (lr=0.001)
+Mean Error: 5.71m
+Median Error: 2.75m
+Within 5m: 71.7%
+Within 10m: 86.9%
+Within 20m: 95.8%
+P90 Error: 11.91m
+P95 Error: 18.01m
+
+================================================================================
+TOP 15 BEST RESULTS (by Mean Error)
+================================================================================
+Rank  Experiment                Model           Mean       Median     <10m       <5m       
+-------------------------------------------------------------------------------------
+1     100ep Full (lr=0.001)     EfficientNet    5.71       2.75       86.9       71.7      
+2     50ep Full (lr=0.001)      EfficientNet    5.93       3.31       86.3       66.2      
+3     100ep Full (lr=0.0001)    ConvNeXt        6.12       3.65       85.0       61.5      
+4     100ep Full (lr=0.0001)    ResNet18        6.43       3.77       82.5       62.8      
+5     100ep Full (lr=0.0001)    EfficientNet    7.32       4.40       79.6       56.0      
+6     100ep Half                ConvNeXt        9.62       7.30       62.8       34.7      
+7     30ep Full                 EfficientNet    10.22      6.43       69.3       38.6      
+8     100ep Half                EfficientNet    10.67      7.84       60.2       30.7      
+9     30ep Half                 ConvNeXt        10.92      8.09       59.1       26.3      
+10    100ep Half                ResNet18        11.34      6.76       69.7       36.5      
+11    50ep Half                 ConvNeXt        11.63      9.18       52.9       25.2      
+12    50ep Full (lr=0.001)      ResNet18        12.41      7.71       61.1       28.5      
+13    30ep Half                 ResNet18        12.66      10.66      47.8       25.2      
+14    100ep Full (lr=0.001)     ResNet18        12.99      7.05       63.5       37.4      
+15    50ep Half                 EfficientNet    13.40      11.04      46.0       19.7      
+
+================================================================================
+100 EPOCHS EXPERIMENTS COMPARISON
+================================================================================
+Experiment                Model           Mean       Median     <10m       <20m      
+--------------------------------------------------------------------------------
+100ep Full (lr=0.001)     EfficientNet    5.71       2.75       86.9       95.8      
+100ep Full (lr=0.0001)    ConvNeXt        6.12       3.65       85.0       96.7      
+100ep Full (lr=0.0001)    ResNet18        6.43       3.77       82.5       94.5      
+100ep Full (lr=0.0001)    EfficientNet    7.32       4.40       79.6       94.5      
+100ep Half                ConvNeXt        9.62       7.30       62.8       89.4      
+100ep Half                EfficientNet    10.67      7.84       60.2       87.6      
+100ep Half                ResNet18        11.34      6.76       69.7       86.5      
+100ep Full (lr=0.001)     ResNet18        12.99      7.05       63.5       84.7      
+100ep Half+Aug            ConvNeXt        14.35      10.14      49.5       82.4      
+100ep Half+Aug            EfficientNet    24.34      13.78      35.5       62.6      
+100ep Half+Aug            ResNet18        24.38      14.41      34.8       68.5      
+100ep Full (lr=0.001)     ConvNeXt        81.82      79.63      1.3        4.2       
+
+================================================================================
+LR=0.0001 EXPERIMENTS COMPARISON
+================================================================================
+Experiment                Model           Mean       Median     <10m      
+----------------------------------------------------------------------
+100ep Full (lr=0.0001)    ConvNeXt        6.12       3.65       85.0      
+100ep Full (lr=0.0001)    ResNet18        6.43       3.77       82.5      
+100ep Full (lr=0.0001)    EfficientNet    7.32       4.40       79.6      
+100ep Half                ConvNeXt        9.62       7.30       62.8      
+100ep Half                EfficientNet    10.67      7.84       60.2      
+30ep Half                 ConvNeXt        10.92      8.09       59.1      
+100ep Half                ResNet18        11.34      6.76       69.7      
+50ep Half                 ConvNeXt        11.63      9.18       52.9      
+30ep Half                 ResNet18        12.66      10.66      47.8      
+50ep Half                 EfficientNet    13.40      11.04      46.0      
+50ep Half                 ResNet18        13.40      9.59       53.6      
+100ep Half+Aug            ConvNeXt        14.35      10.14      49.5      
+30ep Half                 EfficientNet    14.64      11.07      44.9      
+50ep Half+Aug             ConvNeXt        16.70      10.71      44.7      
+30ep Half+Aug             ConvNeXt        18.55      13.22      37.0      
+100ep Half+Aug            EfficientNet    24.34      13.78      35.5      
+100ep Half+Aug            ResNet18        24.38      14.41      34.8      
+50ep Half+Aug             ResNet18        25.42      15.44      28.2      
+50ep Half+Aug             EfficientNet    29.60      18.46      25.6      
+30ep Half+Aug             ResNet18        29.90      17.02      26.4      
+30ep Half+Aug             EfficientNet    32.97      19.62      23.4      
+
+================================================================================
+FULL DATA EXPERIMENTS COMPARISON
+================================================================================
+Experiment                Model           Mean       Median     <10m      
+----------------------------------------------------------------------
+100ep Full (lr=0.001)     EfficientNet    5.71       2.75       86.9      
+50ep Full (lr=0.001)      EfficientNet    5.93       3.31       86.3      
+100ep Full (lr=0.0001)    ConvNeXt        6.12       3.65       85.0      
+100ep Full (lr=0.0001)    ResNet18        6.43       3.77       82.5      
+100ep Full (lr=0.0001)    EfficientNet    7.32       4.40       79.6      
+30ep Full                 EfficientNet    10.22      6.43       69.3      
+50ep Full (lr=0.001)      ResNet18        12.41      7.71       61.1      
+100ep Full (lr=0.001)     ResNet18        12.99      7.05       63.5      
+30ep Full                 ResNet18        29.73      22.45      22.5      
+30ep Full                 ConvNeXt        70.18      61.23      4.6       
+50ep Full (lr=0.001)      ConvNeXt        81.58      75.12      1.5       
+100ep Full (lr=0.001)     ConvNeXt        81.82      79.63      1.3       
+
+================================================================================
+HALF DATA EXPERIMENTS COMPARISON
+================================================================================
+Experiment                Model           Mean       Median     <10m      
+----------------------------------------------------------------------
+100ep Half                ConvNeXt        9.62       7.30       62.8      
+100ep Half                EfficientNet    10.67      7.84       60.2      
+30ep Half                 ConvNeXt        10.92      8.09       59.1      
+100ep Half                ResNet18        11.34      6.76       69.7      
+50ep Half                 ConvNeXt        11.63      9.18       52.9      
+30ep Half                 ResNet18        12.66      10.66      47.8      
+50ep Half                 EfficientNet    13.40      11.04      46.0      
+50ep Half                 ResNet18        13.40      9.59       53.6      
+100ep Half+Aug            ConvNeXt        14.35      10.14      49.5      
+30ep Half                 EfficientNet    14.64      11.07      44.9      
+50ep Half+Aug             ConvNeXt        16.70      10.71      44.7      
+30ep Half+Aug             ConvNeXt        18.55      13.22      37.0      
+100ep Half+Aug            EfficientNet    24.34      13.78      35.5      
+100ep Half+Aug            ResNet18        24.38      14.41      34.8      
+50ep Half+Aug             ResNet18        25.42      15.44      28.2      
+50ep Half+Aug             EfficientNet    29.60      18.46      25.6      
+30ep Half+Aug             ResNet18        29.90      17.02      26.4      
+30ep Half+Aug             EfficientNet    32.97      19.62      23.4      
+
+================================================================================
+MODEL PERFORMANCE SUMMARY
+================================================================================
+
+ResNet18:
+  Best Mean Error: 6.43m
+  Worst Mean Error: 29.90m
+  Avg Mean Error: 17.86m
+  Best <10m Accuracy: 82.5%
+  Top 5 Finishes: 1
+
+EfficientNet:
+  Best Mean Error: 5.71m
+  Worst Mean Error: 32.97m
+  Avg Mean Error: 15.48m
+  Best <10m Accuracy: 86.9%
+  Top 5 Finishes: 3
+
+ConvNeXt:
+  Best Mean Error: 6.12m
+  Worst Mean Error: 81.82m
+  Avg Mean Error: 32.14m
+  Best <10m Accuracy: 85.0%
+  Top 5 Finishes: 1
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+1. BEST OVERALL CONFIGURATION:
+   EfficientNet with 100ep Full (lr=0.001) achieves 5.71m mean error
+   and 86.9% accuracy within 10 meters.
+
+2. BEST MODEL BY CATEGORY:
+   - 100 Epochs: EfficientNet (100ep Full (lr=0.001)) - 5.71m
+   - Full Data: EfficientNet (100ep Full (lr=0.001)) - 5.71m
+   - Half Data: ConvNeXt (100ep Half) - 9.62m
+   - Augmented Test: ConvNeXt (100ep Half+Aug) - 14.35m
+
+3. LEARNING RATE IMPACT:
+   - LR=0.0001 Best: ConvNeXt - 6.12m
+   - LR=0.001 Best: EfficientNet - 5.71m
+
+4. CONVNEXT PERFORMANCE:
+   Best: 100ep Full (lr=0.0001) - 6.12m
+   ConvNeXt excels with LR=0.0001 and full data.
+
+================================================================================
+END OF SUMMARY
+================================================================================
