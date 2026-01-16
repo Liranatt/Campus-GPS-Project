@@ -1,0 +1,10 @@
+# Experiments Requirements
+# For running comparison and analysis scripts
+
+# Core
+numpy>=1.24.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Optional: For geographic plots
+# folium>=0.14.0

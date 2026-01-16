@@ -1,0 +1,72 @@
+# Files to Download for Experiments Submission
+# =============================================
+
+# REQUIRED FILES (for report & submission)
+# ----------------------------------------
+
+## 1. README & Requirements
+GPS_bgu_model/experiments/README.md
+GPS_bgu_model/experiments/requirements.txt
+
+## 2. Comparison Scripts (12 files)
+GPS_bgu_model/scripts/comparison/comprehensive_comparison.py
+GPS_bgu_model/scripts/comparison/comparison_all_experiments.py
+GPS_bgu_model/scripts/comparison/comparison_fulldata_all.py
+GPS_bgu_model/scripts/comparison/comparison_halfdata_all.py
+GPS_bgu_model/scripts/comparison/comparison_100ep_augtest.py
+GPS_bgu_model/scripts/comparison/cross_experiment_comparison.py
+GPS_bgu_model/scripts/comparison/cross_experiment_comparison_v2.py
+GPS_bgu_model/scripts/comparison/model_comparison.py
+GPS_bgu_model/scripts/comparison/compare_30epochs_lr0.0001_halfdata.py
+GPS_bgu_model/scripts/comparison/focused_comparisons.py
+GPS_bgu_model/scripts/comparison/generate_comparison_reports.py
+GPS_bgu_model/scripts/comparison/organize_and_compare_30epochs.py
+
+## 3. Analysis Scripts (3 files)
+GPS_bgu_model/scripts/analysis/plot_50ep_geographic.py
+GPS_bgu_model/scripts/analysis/plot_30ep_lr0001_halfdata_augtest.py
+GPS_bgu_model/scripts/analysis/plot_50ep_lr001_fulldata.py
+
+## 4. Final Summary
+GPS_bgu_model/results/testing/FINAL_SUMMARY.log
+
+## 5. Normalization Parameters (for inference)
+GPS_bgu_model/results/min_val.npy
+GPS_bgu_model/results/max_val.npy
+
+## 6. Result Summaries (JSON files only, not .pth models)
+# For each experiment, you need:
+#   - combined_results.json
+#   - experiment_log.txt
+#   - {Model}/test_results.json
+#   - {Model}/{model}_errors.npy (for error distribution plots)
+#   - {Model}/{model}_predictions.npy (for geographic analysis)
+#   - {Model}/{model}_labels.npy (for geographic analysis)
+
+## 7. Comparison Output Folders (generated plots)
+GPS_bgu_model/results/testing/comparison_50ep/
+GPS_bgu_model/results/testing/comparison_all_experiments/
+GPS_bgu_model/results/testing/comparison_augtest_epochs/
+GPS_bgu_model/results/testing/comparison_fulldata_all/
+GPS_bgu_model/results/testing/comparison_halfdata_all/
+GPS_bgu_model/results/testing/comparison_halfdata_epochs/
+GPS_bgu_model/results/testing/comprehensive_comparison/
+GPS_bgu_model/results/testing/cross_experiment_comparison/
+GPS_bgu_model/results/testing/cross_experiment_comparison_v2/
+
+
+# OPTIONAL FILES (skip to save space)
+# -----------------------------------
+
+## Model Weights (.pth files) - ~500MB total, partner has these
+## Training history JSON files
+## Individual training plots
+
+
+# EXCLUDED FILES
+# --------------
+
+## .pth model files (your partner handles models)
+## __pycache__ folders
+## legacy/ folder
+## src/ folder (partner's code)
