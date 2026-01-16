@@ -270,10 +270,16 @@ We designed experiments to answer specific questions:
 
 ```
 results/
-├── README.md                    # This file
-├── *.npy                        # Base model results (legacy)
+├── *.npy                        # Base model results (11 files)
+│   ├── min_val.npy              # Min normalization values
+│   ├── max_val.npy              # Max normalization values
+│   ├── resnet18_errors.npy      # ResNet18 error distances
+│   ├── resnet18_predictions.npy # ResNet18 predictions
+│   ├── resnet18_labels.npy      # ResNet18 ground truth
+│   ├── efficientnet_*.npy       # EfficientNet results
+│   └── convnext_*.npy           # ConvNeXt results
 │
-└── testing/                     # All experiment results
+testing/                         # All experiment results
     │
     ├── [EXPERIMENT FOLDERS]     # One per experiment configuration
     │   ├── ResNet18/

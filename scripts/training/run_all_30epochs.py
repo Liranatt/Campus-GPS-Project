@@ -56,7 +56,7 @@ def check_efficientnet_trained():
     """Check if EfficientNet 30-epoch model exists."""
     paths_to_check = [
         Path("testing/30epochs/EfficientNet/efficientnet_errors.npy"),
-        Path("efficientnet_errors.npy"),
+        Path("results/efficientnet_errors.npy"),
     ]
     return any(p.exists() for p in paths_to_check)
 

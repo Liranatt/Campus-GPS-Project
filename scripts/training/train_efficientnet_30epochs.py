@@ -222,10 +222,10 @@ def main():
     np.save(output_dir / "efficientnet_predictions.npy", preds)
     np.save(output_dir / "efficientnet_labels.npy", labels_arr)
     
-    # Also save to main directory for compatibility with generate_comparison_reports.py
-    np.save("efficientnet_errors.npy", errors)
-    np.save("efficientnet_predictions.npy", preds)
-    np.save("efficientnet_labels.npy", labels_arr)
+    # Also save to results directory for compatibility with generate_comparison_reports.py
+    np.save("results/efficientnet_errors.npy", errors)
+    np.save("results/efficientnet_predictions.npy", preds)
+    np.save("results/efficientnet_labels.npy", labels_arr)
     
     # Save history
     with open(output_dir / "training_history.json", "w") as f:

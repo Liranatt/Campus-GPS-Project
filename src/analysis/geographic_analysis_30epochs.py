@@ -76,9 +76,9 @@ def load_model_data():
         # Try from organized directory first
         model_dir = BASE_DIR / model
         
-        err_path = model_dir / err_file if (model_dir / err_file).exists() else Path(err_file)
-        pred_path = model_dir / pred_file if (model_dir / pred_file).exists() else Path(pred_file)
-        label_path = model_dir / label_file if (model_dir / label_file).exists() else Path(label_file)
+        err_path = model_dir / err_file if (model_dir / err_file).exists() else Path("results") / err_file
+        pred_path = model_dir / pred_file if (model_dir / pred_file).exists() else Path("results") / pred_file
+        label_path = model_dir / label_file if (model_dir / label_file).exists() else Path("results") / label_file
         
         try:
             results[model] = {
